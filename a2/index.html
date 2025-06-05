@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compare Two Numbers</title>
+</head>
+<body>
+
+  <h1>Comparison Result</h1>
+
+  <div id="result"></div>  <!-- Placeholder for showing result -->
+
+  <script>
+      let a = 20;
+      let b = 12;
+      let message = "";
+
+      if (a > b) {
+          message = "a (" + a + ") is greater than b (" + b + ")";
+      } else if (b > a) {
+          message = "b (" + b + ") is greater than a (" + a + ")";
+      } else {
+          message = "Both numbers are equal (" + a + ")";
+      }
+
+      // Display the message inside the 'result' div
+      document.getElementById("result").textContent = message;
+  </script>
+
+</body>
+</html>
