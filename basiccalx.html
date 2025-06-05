@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Basic Calculator</title>
+  </head>
+  <body>
+    <h1>Basic Calculator</h1>
+    <input type="number" id="num1" placeholder="First Number">
+    <input type="number" id="num2" placeholder="Second Number">
+    <button onclick="performCalculations()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+      const add = (a, b) => a + b;
+      const subtract = (a, b) => a - b;
+      const multiply = (a, b) => a * b;
+      const divide = (a, b) => {
+        if (b === 0) {
+          return "Cannot divide by zero";
+        } else {
+          return a / b;
+        }
+      };
+
+      const calculate = (num1, num2, operation) => {
+        return operation(num1, num2);
+      };
+
+      const performCalculations = () => {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+
+        const sum = calculate(num1, num2, add);
+        const difference = calculate(num1, num2, subtract);
+        const product = calculate(num1, num2, multiply);
+        const quotient = calculate(num1, num2, divide);
+
+        const resultText = "Addition: " + sum + "<br>" +
+                           "Subtraction: " + difference + "<br>" +
+                           "Multiplication: " + product + "<br>" +
+                           "Division: " + quotient;
+
+        document.getElementById("result").innerHTML = resultText;
+      };
+    </script>
+  </body>
+</html>
